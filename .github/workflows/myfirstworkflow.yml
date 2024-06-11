@@ -9,7 +9,7 @@ jobs:
                     echo "hello there!"
                     echo "I am running"
             - name: printing logs
-              run: echo "{{ toJSON(github)}}"
+              run: echo $"{{ toJSON(github)}}"
     second-job:
         needs: first-job
         runs-on: ubuntu-latest
@@ -20,6 +20,4 @@ jobs:
               uses: actions/setup-node@v4
               with:
                 node-version: 16
-            - name: install nodejs
-              run: npm ci
-            
+           
