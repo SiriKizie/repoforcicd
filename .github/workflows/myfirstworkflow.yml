@@ -9,7 +9,7 @@ jobs:
                     echo "hello there!"
                     echo "I am running"
             - name: printing logs
-              run: echo $"{{ toJSON(github)}}"
+              run: echo "${{ toJSON(github)}}"
     second-job:
         needs: first-job
         runs-on: ubuntu-latest
